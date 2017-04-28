@@ -7,14 +7,9 @@
 //
 
 #import "ViewController.h"
-#define GetLogicPixelX(value) ((CHSScreenWidth/LOGIC_DEVICE_WIDTH)*(value))
-#define GetLogicPixelY(value) ((CHSScreenHeight/LOGIC_DEVICE_HEIGHT)*(value))
-#define SCREEN_WIDTH            [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT           [UIScreen mainScreen].bounds.size.height
-#define CHSScreenWidth ([UIScreen mainScreen].bounds.size.width)
-#define CHSScreenHeight  ([UIScreen mainScreen].bounds.size.height)
-#define LOGIC_DEVICE_WIDTH   (750)
-#define LOGIC_DEVICE_HEIGHT  (1334)
+#import "CMBLogOutView.h"
+#import "MLMicroDefinition.h"
+
 
 @interface ViewController ()
 
@@ -24,10 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor cyanColor];
+    
+    CMBLogOutView * logoutView = [[CMBLogOutView alloc]initWithFrame:self.view.bounds];
+    
+    [self.view addSubview:logoutView];
+    
+    
+    
     
     //方法一
-    [self createShareView];
+//    [self createShareView];
     
     //方法二
 //    [self createStepShareView];
@@ -36,6 +38,13 @@
 
 
 }
+
+
+
+
+
+
+
 
 - (void)createShareView
 {
@@ -139,7 +148,7 @@
         // 添加图片
         NSTextAttachment *attchImage = [[NSTextAttachment alloc] init];
         attchImage.image = [UIImage imageNamed:name];
-        attchImage.bounds = CGRectMake(0, 0, GetLogicPixelY(34), GetLogicPixelY(34));
+        attchImage.bounds = CGRectMake(0, -2, GetLogicPixelX(34), GetLogicPixelY(34));
         NSAttributedString *stringImage = [NSAttributedString attributedStringWithAttachment:attchImage];
         [attriStr insertAttributedString:stringImage atIndex:0];
         
@@ -150,7 +159,7 @@
         
         //数字
         [attriStr1 addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, num.length)];
-        [attriStr1 addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:NSMakeRange(0, num.length)];
+        [attriStr1 addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"TimesNewRomanPS-BoldItalicMT" size:18] range:NSMakeRange(0, num.length)];
         //文字
         [attriStr2 addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, str.length)];
         [attriStr2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:11.5] range:NSMakeRange(0, str.length)];
