@@ -21,10 +21,15 @@
 #define LOGIC_DEVICE_HEIGHT  (1334)
 
 @interface CMBLogOutView ()
-@property (nonatomic, strong) UIButton *cloaseButton;     //关闭按钮
-@property (nonatomic, strong) UIButton *dontHaveButton;   //没有啊按钮
-@property (nonatomic, strong) UIButton *bindButton;       //关联保单按钮
+@property (nonatomic, strong) UIButton *cloaseButton;
+@property (nonatomic, strong) UIButton *dontHaveButton;
+@property (nonatomic, strong) UIButton *bindButton;
 @property (nonatomic, strong) UIView *backView;
+@property (nonatomic,strong)UITapGestureRecognizer *recognizer;
+
+
+
+
 @end
 
 
@@ -71,6 +76,15 @@
     closeBtn.tag = 0;
 //    closeBtn.hidden = NO;
     [self addSubview:closeBtn];
+    
+//    _recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleUnderTap:)];
+//    
+//    [_recognizer setNumberOfTapsRequired:1];
+//    _recognizer.cancelsTouchesInView = NO;
+//    [[UIApplication sharedApplication].keyWindow addGestureRecognizer:_recognizer];
+//    
+    
+    
 //    
 //    //图片
 //    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_pop_pg"]];
@@ -223,7 +237,26 @@
     [self removeFromSuperview];
 }
 
-
+-(void)handleUnderTap:(UITapGestureRecognizer*)sender {
+    
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        
+        CGPoint location = [sender locationInView:self.superview];
+        
+        NSLog(@" location =========== %@",location);
+        
+        if (![self pointInside:[self convertPoint:location fromView:self.window] withEvent:nil]) {
+            
+            [self.window removeGestureRecognizer:sender];
+            
+            [self removeFromSuperview];
+        }
+        
+        
+    }
+    
+    
+}
 
 
 

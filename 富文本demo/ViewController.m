@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "CMBLogOutView.h"
 #import "MLMicroDefinition.h"
-
+#import "CMBAlertView.h"
 
 @interface ViewController ()
 
@@ -21,10 +21,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor cyanColor];
     
-    CMBLogOutView * logoutView = [[CMBLogOutView alloc]initWithFrame:self.view.bounds];
+    CMBAlertView * alertView = [[CMBAlertView alloc]initWithFrame:self.view.bounds];
     
-    [self.view addSubview:logoutView];
+    [self.view addSubview:alertView];
     
+//    [alertView show];
     
     
     

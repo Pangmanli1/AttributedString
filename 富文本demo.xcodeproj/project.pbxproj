@@ -31,6 +31,7 @@
 		7CA791661EACDA00005F9145 /* icon_food11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA7914E1EACDA00005F9145 /* icon_food11@2x.png */; };
 		7CA791671EACDA00005F9145 /* icon_food12.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA7914F1EACDA00005F9145 /* icon_food12.png */; };
 		7CA791681EACDA00005F9145 /* icon_food12@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA791501EACDA00005F9145 /* icon_food12@2x.png */; };
+		7CA7916B1EB7978D005F9145 /* CMBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA7916A1EB7978D005F9145 /* CMBAlertView.m */; };
 		7CAF45811EB2F55700B59217 /* CMBLogOutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF45801EB2F55700B59217 /* CMBLogOutView.m */; };
 		7CAF45871EB2F6B700B59217 /* UIView+CZFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF45861EB2F6B700B59217 /* UIView+CZFrame.m */; };
 		7CAF458A1EB2FBBD00B59217 /* UIImage+CMB.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF45891EB2FBBD00B59217 /* UIImage+CMB.m */; };
@@ -72,6 +73,8 @@
 		7CA7914E1EACDA00005F9145 /* icon_food11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_food11@2x.png"; sourceTree = "<group>"; };
 		7CA7914F1EACDA00005F9145 /* icon_food12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_food12.png; sourceTree = "<group>"; };
 		7CA791501EACDA00005F9145 /* icon_food12@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_food12@2x.png"; sourceTree = "<group>"; };
+		7CA791691EB7978D005F9145 /* CMBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBAlertView.h; sourceTree = "<group>"; };
+		7CA7916A1EB7978D005F9145 /* CMBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBAlertView.m; sourceTree = "<group>"; };
 		7CAF457F1EB2F55700B59217 /* CMBLogOutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBLogOutView.h; sourceTree = "<group>"; };
 		7CAF45801EB2F55700B59217 /* CMBLogOutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBLogOutView.m; sourceTree = "<group>"; };
 		7CAF45851EB2F6B700B59217 /* UIView+CZFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CZFrame.h"; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				7CF8D1A21EABBAD2008BD6DC /* ViewController.m */,
 				7CAF457F1EB2F55700B59217 /* CMBLogOutView.h */,
 				7CAF45801EB2F55700B59217 /* CMBLogOutView.m */,
+				7CA791691EB7978D005F9145 /* CMBAlertView.h */,
+				7CA7916A1EB7978D005F9145 /* CMBAlertView.m */,
 				7CAF459C1EB32B8A00B59217 /* CMBPopViewModel.h */,
 				7CAF459D1EB32B8A00B59217 /* CMBPopViewModel.m */,
 				7CAF458C1EB2FCC500B59217 /* CMBLabel.h */,
@@ -295,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA7916B1EB7978D005F9145 /* CMBAlertView.m in Sources */,
 				7CAF459E1EB32B8A00B59217 /* CMBPopViewModel.m in Sources */,
 				7CAF45911EB30BA800B59217 /* NSString+Manage.m in Sources */,
 				7CAF458A1EB2FBBD00B59217 /* UIImage+CMB.m in Sources */,
