@@ -84,41 +84,7 @@
 //    [[UIApplication sharedApplication].keyWindow addGestureRecognizer:_recognizer];
 //    
     
-    
-//    
-//    //图片
-//    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_pop_pg"]];
-//    [imgView sizeToFit];
-//    imgView.x = self.backView.w/2.0 -  imgView.w/2.0;
-//    imgView.y = (-1)*(imgView.h/3.0);
-//    [self.backView addSubview:imgView];
-//    
-//    //第一栏
-//    CGFloat y = [self createListWithYSpace:(GetLogicPixelY(36)+imgView.y+imgView.h) andImg:@"hospital_query_icon" andLabTxt:@"查询保单信息"];
-//    
-//    //第二栏
-//    y = [self createListWithYSpace:y andImg:@"hospital_management_icon" andLabTxt:@"管理理赔进度"];
-//    
-//    //第三栏
-//    y = [self createListWithYSpace:y andImg:@"hospital_understand_icon" andLabTxt:@"了解保险权益"];
-//    
-//    //第四条线
-//    UIView *line4 = [UIView new];
-//    line4.x = GetLogicPixelX(64);
-//    line4.y = y;
-//    line4.w = GetLogicPixelX(502);
-//    line4.h = GetLogicPixelY(1);
-//    line4.backgroundColor = [UIColor whiteColor];
-//    [self.backView addSubview:line4];
-//    
-//    //没有按钮
-//    y = line4.y + line4.h + GetLogicPixelY(42);
-//    [self initBtnWithX:line4.x andY:y andTitle:@"没有啊" andTag:1];
-//    
-//    //管理保单按钮
-//    CGFloat space = self.backView.w - 2*GetLogicPixelX(220)-2*line4.x;
-//    [self initBtnWithX:(line4.x+GetLogicPixelX(220)+space) andY:y andTitle:@"关联保单" andTag:2];
-    
+
 }
 
 -(CGFloat)createListWithYSpace: (CGFloat) y andImg:(NSString *)imgName andLabTxt:(NSString *)txt{

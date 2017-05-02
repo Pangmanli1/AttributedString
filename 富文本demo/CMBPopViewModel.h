@@ -16,15 +16,16 @@ typedef NS_ENUM(NSInteger, MLUserOrientType ) {
 };
 
 
-@interface CMBPopViewModel : NSObject
+@interface CMBPopViewModel : NSObject<NSCoding>
 
+@property (nonatomic, copy)NSString * type;
+@property (nonatomic, copy)NSString * imageUrl;
+@property (nonatomic, copy)NSString * loadUrl;
+@property (nonatomic, copy)NSString * startDate;
+@property (nonatomic, copy)NSString * endDate;
+@property (nonatomic, copy)NSString * user;
 
-@property (nonatomic, assign)BOOL isInsured;
-@property (nonatomic, copy)NSString * imgUrl;
-@property (nonatomic, copy)NSString * adUrl;
-@property (nonatomic, copy)NSString * fireDayInterval;
-@property (nonatomic, assign)BOOL isFireEveryDay;
-@property (nonatomic, assign)MLUserOrientType orientedUserType;
+@property (nonatomic, assign)MLUserOrientType userType;
 
 
 @end

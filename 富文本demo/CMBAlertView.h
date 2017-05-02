@@ -10,6 +10,7 @@
 
 @interface CMBAlertView : UIView
 
+@property (nonatomic, copy)NSString * imgUrlStr;
 // 展示弹窗
 - (void)show;
 

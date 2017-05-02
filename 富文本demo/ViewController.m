@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "CMBLogOutView.h"
 #import "MLMicroDefinition.h"
 #import "CMBAlertView.h"
+#import "CMBPopViewModel.h"
+#import "MLNetManager.h"
+#import "MJExtension.h"
+#import "CMBPopViewModelArchiver.h"
 
 @interface ViewController ()
 
@@ -21,9 +24,42 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor cyanColor];
     
+    
     CMBAlertView * alertView = [[CMBAlertView alloc]initWithFrame:self.view.bounds];
     
     [self.view addSubview:alertView];
+
+    MLNetManager * manager = [MLNetManager sharedManager];
+    NSURL * url = [NSURL URLWithString:@"http://ocpnags04.bkt.clouddn.com/test.json"];
+    
+    [manager getDataWithUrl:url andFinishedBlock:^(NSDictionary* responseDic, NSError *error) {
+        
+        NSLog(@"=== %@ === ",responseDic);
+        
+        if (!error) {
+            
+            CMBPopViewModel * model = [CMBPopViewModel mj_objectWithKeyValues:responseDic];
+            [[CMBPopViewModelArchiver shareArchiver] savePopViewModel:model];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                alertView.imgUrlStr = model.imageUrl;
+                
+            });
+            
+        }else {
+            
+            NSLog(@"%@",error);
+        }
+        
+        
+        
+//        [alertView show];
+        
+    }];
+    
+    
+    
     
 //    [alertView show];
     

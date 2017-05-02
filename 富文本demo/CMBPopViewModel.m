@@ -7,11 +7,15 @@
 //
 
 #import "CMBPopViewModel.h"
+#import "MLNetManager.h"
+#import "MJExtension.h"
+
+
+static NSString * domain;
 
 @implementation CMBPopViewModel
 
-
-
+MJCodingImplementation
 
 
 
